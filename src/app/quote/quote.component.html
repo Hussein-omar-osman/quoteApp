@@ -14,18 +14,21 @@
                   <p class="card-text">
                     <strong>Quote: </strong> {{ quote.content }}
                   </p>
-                  <app-quote-details
+                  <p class="card-text">
+                    <strong>date: </strong> {{ quote.datePublished }}
+                  </p>
+                  <!-- <app-quote-details
                     *ngIf="quote.showDescription"
                     (delete)="clearQuote($event, i)"
                     [quote]="quote"
                   ></app-quote-details
-                  ><br />
-                  <button (click)="toggleDetails(i)" class="btn btn-info">
+                  ><br /> -->
+                  <!-- <button (click)="toggleDetails(i)" class="btn btn-info">
                     More details
-                  </button>
+                  </button> -->
                   <br /><br />
                   <div class="row">
-                    <div class="col-md-6 upvotes">
+                    <div class="col-md-6 upvotes" (click)="addUpvote(i)">
                       <svg
                         width="24"
                         height="24"
@@ -48,7 +51,7 @@
                       </svg>
                       <span>{{ quote.upvotes }}</span>
                     </div>
-                    <div class="col-md-6 downvotes">
+                    <div class="col-md-6 downvotes" (click)="addDownvote(i)">
                       <svg
                         width="24"
                         height="24"

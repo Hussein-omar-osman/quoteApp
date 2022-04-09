@@ -1,5 +1,6 @@
 .quote-container {
   display: flex;
+  user-select: none;
 }
 
 .quotes {
@@ -18,4 +19,9 @@
 .upvotes,
 .downvotes {
   cursor: pointer;
+}
+
+.upvotes span,
+.downvotes span {
+  user-select: none;
 }

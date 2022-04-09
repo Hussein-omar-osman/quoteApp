@@ -12,6 +12,13 @@ export class QuoteComponent implements OnInit {
     new Quote('This is bad', 'hassan', 'Maclcom z', new Date()),
     new Quote('This is best', 'siham', 'Maclcom A', new Date()),
   ];
+
+  addUpvote(value: number) {
+    this.allQuotes[value].upvotes += 1;
+  }
+  addDownvote(value: number) {
+    this.allQuotes[value].downvotes += 1;
+  }
   constructor() {}
 
   ngOnInit(): void {}
