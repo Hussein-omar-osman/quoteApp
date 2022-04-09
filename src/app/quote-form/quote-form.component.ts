@@ -13,7 +13,7 @@ export class QuoteFormComponent implements OnInit {
   author: string;
   newQuote: Quote;
 
-  @Output() pushQuote: EventEmitter<Quote> = new EventEmitter();
+  @Output() pushQuote: EventEmitter<Quote> = new EventEmitter<Quote>();
 
   onSubmitPublish(form: NgForm) {
     console.log(form.value.description);

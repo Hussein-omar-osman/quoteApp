@@ -19,6 +19,17 @@ export class QuoteComponent implements OnInit {
   addDownvote(value: number) {
     this.allQuotes[value].downvotes += 1;
   }
+
+  addQuote(quote: Quote) {
+    let today = new Date();
+    quote.datePublished = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      today.getDate()
+    );
+    this.allQuotes.unshift(quote);
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
