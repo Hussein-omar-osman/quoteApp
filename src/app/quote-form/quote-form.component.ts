@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-quote-form',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quote-form.component.css'],
 })
 export class QuoteFormComponent implements OnInit {
-  onSubmit() {
-    console.log('form submitted');
+  onSubmit(form: NgForm) {
+    console.log(form);
+    console.log(form.value);
   }
 
   constructor() {}
