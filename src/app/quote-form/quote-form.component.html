@@ -1,1 +1,39 @@
-<p>quote-form works!</p>
+<div class="container-fluid forms">
+  <h2 class="text-center">Add Your Quotes Here</h2>
+  <hr />
+  <form (ngSubmit)="onSubmit()" #quoteForm="ngForm">
+    <div class="form-group">
+      <label for="publisher">Publisher</label>
+      <input
+        type="text"
+        class="form-control"
+        id="publisher"
+        name="publisher"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Quote</label>
+      <textarea
+        class="form-control"
+        id="description"
+        rows="4"
+        name="description"
+        required
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input
+        type="text"
+        required
+        class="form-control"
+        id="author"
+        name="author"
+        required
+      />
+    </div>
+
+    <br /><button type="submit" class="btn btn-success">Publish</button>
+  </form>
+</div>

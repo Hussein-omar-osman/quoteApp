@@ -1,0 +1,13 @@
+.wrapper {
+  width: 90%;
+  display: flex;
+  margin: 50px auto;
+}
+.quote {
+  width: 60%;
+  border: 2px solid black;
+}
+
+.quote-form {
+  width: 30%;
+}
