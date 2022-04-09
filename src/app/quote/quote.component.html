@@ -4,7 +4,11 @@
       <div>
         <ul>
           <h1>Latest Quotes</h1>
-          <li *ngFor="let quote of allQuotes; let i = index" quotes>
+          <li
+            class="item"
+            *ngFor="let quote of allQuotes; let i = index"
+            quotes
+          >
             <div class="card" style="width: 24rem">
               <div class="card-body">
                 <p class="card-text">
