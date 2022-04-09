@@ -12,9 +12,9 @@ export class QuoteFormComponent implements OnInit {
   author: string;
 
   onSubmit(form: NgForm) {
-    console.log(form);
-    console.log(form.value);
-    console.log(form.value.author);
+    // console.log(form);
+    // console.log(form.value);
+    // console.log(form.value.author);
     console.log(form.value.description);
     console.log(form.value.publisher);
     this.publisher = form.value.publisher;
