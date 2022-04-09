@@ -8,7 +8,7 @@
             <div class="card" style="width: 24rem">
               <div class="card-body">
                 <p class="card-text">
-                  <strong>Publisher: </strong> {{ quote.publisher }}
+                  <strong>{{ quote.publisher }} </strong>
                 </p>
                 <p class="card-text">
                   <svg
@@ -33,16 +33,13 @@
                     />
                   </svg>
                 </p>
-                <p class="card-text">
-                  <strong>date: </strong> {{ quote.datePublished }}
-                </p>
                 <app-quote-details
                   *ngIf="quote.showDescription"
                   (delete)="clearQuote($event, i)"
                   [quote]="quote"
                 ></app-quote-details
                 ><br />
-                <button (click)="toggleDetails(i)" class="btn btn-info">
+                <button (click)="toggleDetails(i)" class="btn btn-success">
                   Show details
                 </button>
                 <br /><br />

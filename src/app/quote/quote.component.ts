@@ -8,9 +8,24 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   allQuotes: Quote[] = [
-    new Quote('This is good', 'Hussein', 'Maclcom X', new Date()),
-    new Quote('This is bad', 'hassan', 'Maclcom z', new Date()),
-    new Quote('This is best', 'siham', 'Maclcom A', new Date()),
+    new Quote(
+      'A wise man can learn more from his enemies than a fool from his friends.',
+      'Hussein',
+      'Maclcom X',
+      new Date(2022, 3, 4)
+    ),
+    new Quote(
+      `Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking`,
+      'Klaus',
+      'Steve Jobs',
+      new Date(2022, 3, 4)
+    ),
+    new Quote(
+      `If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.`,
+      'Mark',
+      'Maclcom A',
+      new Date(2022, 3, 4)
+    ),
   ];
 
   addUpvote(value: number) {
