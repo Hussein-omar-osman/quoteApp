@@ -1,1 +1,6 @@
 <p>quote-details works!</p>
+<p id="author"><strong>Author: </strong> {{ quote.author }}</p>
+<p><strong>Publsihed on: </strong>{{ quote.datePublished }} days ago</p>
+<p id="votes"><strong>Upvotes: </strong>{{ quote.upvotes }}</p>
+<p id="votes"><strong>Downvotes: </strong>{{ quote.downvotes }}</p>
+<button (click)="deleteQuote(true)" class="btn btn-success">Delete</button>
