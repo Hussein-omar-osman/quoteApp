@@ -30,6 +30,11 @@ export class QuoteComponent implements OnInit {
     this.allQuotes.unshift(quote);
   }
 
+  toggleDetails(index: number) {
+    this.allQuotes[index].showDescription =
+      !this.allQuotes[index].showDescription;
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
