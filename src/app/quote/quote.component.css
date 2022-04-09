@@ -9,7 +9,13 @@
 
 .quote-form {
   width: 35%;
+  height: 500px;
   border: 2px solid black;
   margin: 0 50px;
   background-color: #d3d3d3;
+}
+
+.upvotes,
+.downvotes {
+  cursor: pointer;
 }
