@@ -11,6 +11,7 @@ export class QuoteDetailsComponent implements OnInit {
   @Output() delete = new EventEmitter<boolean>();
 
   deleteQuote(d: boolean) {
+    alert('Would you like to delete?');
     this.delete.emit(d);
   }
 

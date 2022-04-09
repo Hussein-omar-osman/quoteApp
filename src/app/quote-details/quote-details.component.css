@@ -1,0 +1,11 @@
+.votes {
+  display: flex;
+}
+.votes p {
+  margin: 0 20px 20px 20px;
+}
+
+button {
+  float: right;
+  margin: 10px 30px;
+}
