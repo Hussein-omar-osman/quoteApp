@@ -35,6 +35,9 @@ small {
 .submit {
   margin: 0 20px 0 120px;
   border-radius: 10px;
+  background-color: #a0a2a3;
+  border: none;
+  outline: none;
 }
 
 .fields svg {
