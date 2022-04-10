@@ -1,6 +1,9 @@
 <div class="details">
   <p id="author">{{ quote.author }}</p>
-  <p><strong>Pub </strong>{{ quote.datePublished | datePublished }} days ago</p>
+  <p>
+    <strong>Published: </strong>{{ quote.datePublished | datePublished }} days
+    ago
+  </p>
   <div class="votes">
     <p id="votes"><strong>Likes: </strong>{{ quote.upvotes }}</p>
     <p id="votes"><strong>Dislikes: </strong>{{ quote.downvotes }}</p>

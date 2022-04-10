@@ -1,15 +1,14 @@
 export class Quote {
   showDescription: boolean;
-  upvotes: number;
-  downvotes: number;
+
   constructor(
     public content: string,
     public publisher: string,
     public author: string,
-    public datePublished: Date
+    public datePublished: Date,
+    public upvotes: number,
+    public downvotes: number
   ) {
     this.showDescription = false;
-    this.upvotes = 0;
-    this.downvotes = 0;
   }
 }

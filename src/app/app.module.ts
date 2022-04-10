@@ -7,9 +7,10 @@ import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { FormsModule } from '@angular/forms';
 import { QuoteDetailsComponent } from './quote-details/quote-details.component';
 import { DatePublishedPipe } from './date-published.pipe';
+import { HighestVotesDirective } from './highest-votes.directive';
 
 @NgModule({
-  declarations: [AppComponent, QuoteComponent, QuoteFormComponent, QuoteDetailsComponent, DatePublishedPipe],
+  declarations: [AppComponent, QuoteComponent, QuoteFormComponent, QuoteDetailsComponent, DatePublishedPipe, HighestVotesDirective],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
