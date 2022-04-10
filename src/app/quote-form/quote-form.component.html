@@ -1,62 +1,68 @@
 <div class="container-fluid forms">
-  <h2 class="text-center">Add Your Quotes Here</h2>
+  <h2 class="text-center">Add Your Quotes</h2>
   <hr />
   <form (ngSubmit)="onSubmitPublish(myForm)" #myForm="ngForm">
-    <label for="publisher">Publisher</label>
-    <input
-      type="text"
-      class="form-control"
-      id="publisher"
-      name="publisher"
-      ngModel
-      required
-      #fInput="ngModel"
-    />
-    <div>
-      <small *ngIf="fInput.invalid && fInput.touched"
-        >Publisher is a required field</small
-      >
-    </div>
+    <div class="fields">
+      <div id="publisher">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Publisher"
+          id="publisher"
+          name="publisher"
+          ngModel
+          required
+          #fInput="ngModel"
+        />
+        <div>
+          <small *ngIf="fInput.invalid && fInput.touched"
+            >Publisher is a required field</small
+          >
+        </div>
+      </div>
+      <div id="description">
+        <textarea
+          class="form-control"
+          id="description"
+          placeholder="Quote"
+          rows="4"
+          name="description"
+          ngModel
+          required
+          #sInput="ngModel"
+        ></textarea>
 
-    <label for="description">Quote</label>
-    <textarea
-      class="form-control"
-      id="description"
-      rows="4"
-      name="description"
-      ngModel
-      required
-      #sInput="ngModel"
-    ></textarea>
-    <div>
-      <small *ngIf="sInput.invalid && sInput.touched"
-        >Qoute is a required field</small
-      >
-    </div>
-    <label for="author">Author</label>
-    <input
-      type="text"
-      required
-      class="form-control"
-      id="author"
-      name="author"
-      ngModel
-      required
-      #tInput="ngModel"
-    />
-    <div>
-      <small *ngIf="tInput.invalid && tInput.touched"
-        >Author is a required field</small
-      >
-    </div>
+        <small *ngIf="sInput.invalid && sInput.touched"
+          >Qoute is a required field</small
+        >
+      </div>
+      <div id="author">
+        <input
+          type="text"
+          required
+          placeholder="Author"
+          class="form-control"
+          id="author"
+          name="author"
+          ngModel
+          required
+          #tInput="ngModel"
+        />
+        <div>
+          <small *ngIf="tInput.invalid && tInput.touched"
+            >Author is a required field</small
+          >
+        </div>
+      </div>
 
-    <br /><button
-      type="submit"
-      class="btn btn-success"
-      [disabled]="!myForm.valid"
-    >
-      Publish
-    </button>
+      <br /><button
+        type="submit"
+        class="btn btn-success submit"
+        [disabled]="!myForm.valid"
+      >
+        Publish
+      </button>
+    </div>
   </form>
 </div>
 

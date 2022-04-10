@@ -9,11 +9,14 @@
 }
 
 .quote-form {
+  padding: 20px;
   width: 35%;
-  height: 500px;
-  border: 2px solid black;
+  height: 93vh;
+  /* border: 2px solid black; */
   margin: 0 50px;
-  background-color: #d3d3d3;
+  border-radius: 40px;
+  background-color: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
 }
 
 .upvotes,
