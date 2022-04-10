@@ -4,7 +4,11 @@
       <ul>
         <h1>Latest Quotes</h1>
         <li class="item" *ngFor="let quote of allQuotes; let i = index" quotes>
-          <div class="card" style="width: 30rem">
+          <div
+            class="card"
+            style="width: 30rem"
+            [appHighestVotes]="quote.upvotes === mostVoted.upvotes"
+          >
             <div class="card-body">
               <p class="card-text">
                 <strong>{{ quote.publisher }} </strong>

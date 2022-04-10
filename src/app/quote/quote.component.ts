@@ -21,7 +21,7 @@ export class QuoteComponent implements OnInit {
       'Klaus',
       'Steve Jobs',
       new Date(2022, 3, 6),
-      34,
+      645,
       2
     ),
     new Quote(
