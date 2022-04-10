@@ -1,9 +1,9 @@
-<p id="author"><strong>Author: </strong> {{ quote.author }}</p>
-<p>
-  <strong>Publsihed: </strong>{{ quote.datePublished | datePublished }} days ago
-</p>
-<div class="votes">
-  <p id="votes"><strong>Likes: </strong>{{ quote.upvotes }}</p>
-  <p id="votes"><strong>Dislikes: </strong>{{ quote.downvotes }}</p>
+<div class="details">
+  <p id="author">{{ quote.author }}</p>
+  <p><strong>Pub </strong>{{ quote.datePublished | datePublished }} days ago</p>
+  <div class="votes">
+    <p id="votes"><strong>Likes: </strong>{{ quote.upvotes }}</p>
+    <p id="votes"><strong>Dislikes: </strong>{{ quote.downvotes }}</p>
+    <button (click)="deleteQuote(true)" class="btn btn-danger">Delete</button>
+  </div>
 </div>
-<button (click)="deleteQuote(true)" class="btn btn-danger">Delete</button>

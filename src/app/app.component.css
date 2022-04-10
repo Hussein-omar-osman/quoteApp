@@ -1,8 +1,9 @@
 .wrapper {
-  width: 90%;
+  width: 100%;
   display: flex;
   margin: 50px auto;
 }
 .quote {
   width: 90%;
+  margin: 0 auto;
 }

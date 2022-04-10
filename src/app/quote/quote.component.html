@@ -1,106 +1,100 @@
 <div class="quote-container">
   <div class="quotes">
-    <div class="container">
-      <div>
-        <ul>
-          <h1>Latest Quotes</h1>
-          <li
-            class="item"
-            *ngFor="let quote of allQuotes; let i = index"
-            quotes
-          >
-            <div class="card" style="width: 24rem">
-              <div class="card-body">
-                <p class="card-text">
-                  <strong>{{ quote.publisher }} </strong>
-                </p>
-                <p class="card-text">
+    <div>
+      <ul>
+        <h1>Latest Quotes</h1>
+        <li class="item" *ngFor="let quote of allQuotes; let i = index" quotes>
+          <div class="card" style="width: 30rem">
+            <div class="card-body">
+              <p class="card-text">
+                <strong>{{ quote.publisher }} </strong>
+              </p>
+              <p class="card-text">
+                <svg
+                  class="svgQuotes"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M96 224C84.72 224 74.05 226.3 64 229.9V224c0-35.3 28.7-64 64-64c17.67 0 32-14.33 32-32S145.7 96 128 96C57.42 96 0 153.4 0 224v96c0 53.02 42.98 96 96 96s96-42.98 96-96S149 224 96 224zM352 224c-11.28 0-21.95 2.305-32 5.879V224c0-35.3 28.7-64 64-64c17.67 0 32-14.33 32-32s-14.33-32-32-32c-70.58 0-128 57.42-128 128v96c0 53.02 42.98 96 96 96s96-42.98 96-96S405 224 352 224z"
+                  />
+                </svg>
+                {{ quote.content }}
+                <svg
+                  class="svgQuotes"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
+                  <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M96 96C42.98 96 0 138.1 0 192s42.98 96 96 96c11.28 0 21.95-2.305 32-5.879V288c0 35.3-28.7 64-64 64c-17.67 0-32 14.33-32 32s14.33 32 32 32c70.58 0 128-57.42 128-128V192C192 138.1 149 96 96 96zM448 192c0-53.02-42.98-96-96-96s-96 42.98-96 96s42.98 96 96 96c11.28 0 21.95-2.305 32-5.879V288c0 35.3-28.7 64-64 64c-17.67 0-32 14.33-32 32s14.33 32 32 32c70.58 0 128-57.42 128-128V192z"
+                  />
+                </svg>
+              </p>
+              <app-quote-details
+                *ngIf="quote.showDescription"
+                (delete)="clearQuote($event, i)"
+                [quote]="quote"
+              ></app-quote-details
+              ><br />
+              <button (click)="toggleDetails(i)" class="btn btn-success">
+                Show details
+              </button>
+              <br /><br />
+              <div class="row">
+                <div class="col-md-6 upvotes" (click)="addUpvote(i)">
                   <svg
-                    class="svgQuotes"
+                    width="24"
+                    height="24"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
                   >
-                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                     <path
-                      d="M96 224C84.72 224 74.05 226.3 64 229.9V224c0-35.3 28.7-64 64-64c17.67 0 32-14.33 32-32S145.7 96 128 96C57.42 96 0 153.4 0 224v96c0 53.02 42.98 96 96 96s96-42.98 96-96S149 224 96 224zM352 224c-11.28 0-21.95 2.305-32 5.879V224c0-35.3 28.7-64 64-64c17.67 0 32-14.33 32-32s-14.33-32-32-32c-70.58 0-128 57.42-128 128v96c0 53.02 42.98 96 96 96s96-42.98 96-96S405 224 352 224z"
+                      d="M16.4724 20H4.1C3.76863 20 3.5 19.7314 3.5 19.4V9.6C3.5 9.26863 3.76863 9 4.1 9H6.86762C7.57015 9 8.22116 8.6314 8.5826 8.02899L11.293 3.51161C11.8779 2.53688 13.2554 2.44422 13.9655 3.33186C14.3002 3.75025 14.4081 4.30635 14.2541 4.81956L13.2317 8.22759C13.1162 8.61256 13.4045 9 13.8064 9H18.3815C19.7002 9 20.658 10.254 20.311 11.5262L18.4019 18.5262C18.1646 19.3964 17.3743 20 16.4724 20Z"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M7 20L7 9"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     />
                   </svg>
-                  {{ quote.content }}
+                  <span>{{ quote.upvotes }}</span>
+                </div>
+                <div class="col-md-6 downvotes" (click)="addDownvote(i)">
                   <svg
-                    class="svgQuotes"
+                    width="24"
+                    height="24"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
                   >
-                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                     <path
-                      d="M96 96C42.98 96 0 138.1 0 192s42.98 96 96 96c11.28 0 21.95-2.305 32-5.879V288c0 35.3-28.7 64-64 64c-17.67 0-32 14.33-32 32s14.33 32 32 32c70.58 0 128-57.42 128-128V192C192 138.1 149 96 96 96zM448 192c0-53.02-42.98-96-96-96s-96 42.98-96 96s42.98 96 96 96c11.28 0 21.95-2.305 32-5.879V288c0 35.3-28.7 64-64 64c-17.67 0-32 14.33-32 32s14.33 32 32 32c70.58 0 128-57.42 128-128V192z"
+                      d="M16.4724 3.5H4.1C3.76863 3.5 3.5 3.76863 3.5 4.1V13.9C3.5 14.2314 3.76863 14.5 4.1 14.5H6.86762C7.57015 14.5 8.22116 14.8686 8.5826 15.471L11.293 19.9884C11.8779 20.9631 13.2554 21.0558 13.9655 20.1681C14.3002 19.7497 14.4081 19.1937 14.2541 18.6804L13.2317 15.2724C13.1162 14.8874 13.4045 14.5 13.8064 14.5H18.3815C19.7002 14.5 20.658 13.246 20.311 11.9738L18.4019 4.97376C18.1646 4.10364 17.3743 3.5 16.4724 3.5Z"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M7 14.5L7 3.5"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     />
                   </svg>
-                </p>
-                <app-quote-details
-                  *ngIf="quote.showDescription"
-                  (delete)="clearQuote($event, i)"
-                  [quote]="quote"
-                ></app-quote-details
-                ><br />
-                <button (click)="toggleDetails(i)" class="btn btn-success">
-                  Show details
-                </button>
-                <br /><br />
-                <div class="row">
-                  <div class="col-md-6 upvotes" (click)="addUpvote(i)">
-                    <svg
-                      width="24"
-                      height="24"
-                      stroke-width="1.5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16.4724 20H4.1C3.76863 20 3.5 19.7314 3.5 19.4V9.6C3.5 9.26863 3.76863 9 4.1 9H6.86762C7.57015 9 8.22116 8.6314 8.5826 8.02899L11.293 3.51161C11.8779 2.53688 13.2554 2.44422 13.9655 3.33186C14.3002 3.75025 14.4081 4.30635 14.2541 4.81956L13.2317 8.22759C13.1162 8.61256 13.4045 9 13.8064 9H18.3815C19.7002 9 20.658 10.254 20.311 11.5262L18.4019 18.5262C18.1646 19.3964 17.3743 20 16.4724 20Z"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                      />
-                      <path
-                        d="M7 20L7 9"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <span>{{ quote.upvotes }}</span>
-                  </div>
-                  <div class="col-md-6 downvotes" (click)="addDownvote(i)">
-                    <svg
-                      width="24"
-                      height="24"
-                      stroke-width="1.5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16.4724 3.5H4.1C3.76863 3.5 3.5 3.76863 3.5 4.1V13.9C3.5 14.2314 3.76863 14.5 4.1 14.5H6.86762C7.57015 14.5 8.22116 14.8686 8.5826 15.471L11.293 19.9884C11.8779 20.9631 13.2554 21.0558 13.9655 20.1681C14.3002 19.7497 14.4081 19.1937 14.2541 18.6804L13.2317 15.2724C13.1162 14.8874 13.4045 14.5 13.8064 14.5H18.3815C19.7002 14.5 20.658 13.246 20.311 11.9738L18.4019 4.97376C18.1646 4.10364 17.3743 3.5 16.4724 3.5Z"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                      />
-                      <path
-                        d="M7 14.5L7 3.5"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
 
-                    <span>{{ quote.downvotes }}</span>
-                  </div>
+                  <span>{{ quote.downvotes }}</span>
                 </div>
               </div>
             </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
   <div class="quote-form">

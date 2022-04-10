@@ -11,7 +11,7 @@ export class QuoteComponent implements OnInit {
     new Quote(
       'A wise man can learn more from his enemies than a fool from his friends.',
       'Hussein',
-      'Maclcom X',
+      'Malcom X',
       new Date(2022, 3, 4)
     ),
     new Quote(
@@ -27,6 +27,8 @@ export class QuoteComponent implements OnInit {
       new Date(2022, 3, 4)
     ),
   ];
+
+  // allQuotes:Quote[][0].upvotes = 10;
 
   addUpvote(value: number) {
     this.allQuotes[value].upvotes += 1;
