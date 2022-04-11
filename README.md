@@ -19,7 +19,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Live site
 
-Live [site](candid-beignet-16725e.netlify.app/)
+Live [site](https://candid-beignet-16725e.netlify.app/)
 
 ## Code scaffolding
 
