@@ -27,7 +27,7 @@ export class QuoteComponent implements OnInit {
     new Quote(
       `If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.`,
       'Mark',
-      'Maclcom A',
+      'Bill Gates',
       new Date(2022, 3, 4),
       2,
       0
